@@ -4,6 +4,14 @@
 
 `cd`
 
+## Exploring the system
+
+`ls`
+
+`file`
+
+`less` - g, G, /characters, n
+
 ## Permissions
 
 `id`
