@@ -1,3 +1,9 @@
+## Navigation
+
+`pwd` - print working directory
+
+`cd`
+
 ## Permissions
 
 `id`
