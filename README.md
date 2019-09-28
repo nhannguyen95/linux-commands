@@ -241,4 +241,24 @@ Cutting and Pasting text:
 |Ctrl-u|Cut text from cursor location to begining of line|
 |Ctrl-y|Paste text from the clipboard to the cursor location|
 
+## Processes
 
+background programs ~ daemon programs
+
+`ps`: view processes
+- ps x: all processes regardless of what terminal they are controlled by.
+- STAT:
+  - R: the process is running or ready to run.
+  - S: sleeping, waiting for an event.
+  - D: Uninterruptible sleep, waiting for I/O such as a disk drive.
+  - T: Stopped (has been instructed to stop).
+  - Z: Zombie process: the process that has terminated but has not been cleaned up by parent process.
+  - <: high-priority process (given more time on the CPU for example)
+  - N: low-priority process
+- ps aux, column meaning:
+  - USER: owner of the process.
+  - %CPU: CPU usage in percent.
+  - %MEM: Memory usage in percent.
+  - VSZ: virtual memory size.
+  - RSS: resident set size. Amount of physical memory the process is using in kb.
+  - STARTED: Time when the process started.
