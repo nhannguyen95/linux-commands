@@ -176,3 +176,23 @@ I/O redirection allows us to change where into comes from and where output goes.
   - `-f` flat to monitor files in real time.
 
 `tee` - read from stdin and output to stdout AND files
+
+## Seeing the World as the Shell Sees It
+
+Expansion: when we press Enter, bash performs several substitution upon the text before it carries out the command.
+- * expands to all file names in current dir.
+- Tilde expansion: ~ expands to name of current directory of the named user (when used at begining of a word)
+- Arithmetic expansion: `$((expression))`.
+- Brace expansion: `{A, B, C}` to `A B C`, `{07..10}` to `07 08 09 10`, `{A..Z}`.
+- Parameter expansion: `$USER`.
+- Command substitution: `ls -l $(which cp)` or ls -l `which cp`.
+
+Quoting: a mechanism called quoting to selectively suppress unwanted expansions. 
+- Double quotes: if we place text inside double quote, all special characters used by the shell lose their special meaning and are treated and ordinary characters. Exception are $, \ and `.
+- Single quotes: used to surpress ALL expansions.
+
+Escaping Characters:
+- `echo "\$5.00"`
+- eliminate special meaning of a character ($, !, &, space, etc.) in a filename: `mv bad\&filename good_filename`
+- escapse sequence: \a, \b, \n, \r, \t
+- use echo with -e or `$' '` to enable interpretation of escapse sequences.
