@@ -1,3 +1,11 @@
+## What is the shell?
+
+`date`
+
+`cal` - displays current month’s calendar by default
+
+`exit` - end terminal session
+
 ## Navigation
 
 `pwd` - print working directory
