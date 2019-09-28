@@ -105,6 +105,39 @@ effective user ID, effective group ID, sticky bit
 
 `passwd`
 
+## Working with Commands
+
+`type`
+- type command
+- 4 types of commands:
+  - an executable program: compiled binaries written C, C++; scripting languages such as Perl, Python, Ruby, etc.
+  - a command built into the shell itself: like cd.
+  - a shell function
+  - an alias: user-define commands, built from other commands
+  
+`which`: display executable's location
+
+`help`: get help for shell builtins
+- help command, or
+- command --help
+
+`man`: display a program's manual page
+- man uses less for displaying
+
+`apropos`: search the list of man pages for possible matches based on a search term
+- apropos search_term
+
+`whatis`: display one-line manual page descriptions
+
+`info`: GNU project provides an alternative to man pages for their programs.
+
+`alias`
+- no argument to list all aliases
+- alias name='string'
+- aliases vanish when shell session ends.
+
+`unalias`: remove alias
+
 ## Redirection
 
 By default, stdin is attached to keyboard, stdout and stderr are linked to the screen at not saved into disk file.
