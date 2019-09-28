@@ -196,3 +196,49 @@ Escaping Characters:
 - eliminate special meaning of a character ($, !, &, space, etc.) in a filename: `mv bad\&filename good_filename`
 - escapse sequence: \a, \b, \n, \r, \t
 - use echo with -e or `$' '` to enable interpretation of escapse sequences.
+
+## Advanced Keyboard Tricks
+
+`clear`
+
+`history`
+- !history_number: execute the command of the 88th line in the history list.
+- Ctrl-r to search in the history incrementally. When found, enter to execute or Ctrl-j to copy it to the current command line.
+
+History expansion:
+
+|Key sequence|Desc|
+|-|-|
+|!! or up-enter|execute the last command|
+|!number|explained|
+|!string|repeat last history list item starting with string|
+|!?string|repeat last history list item containing string|
+
+Cursor movement:
+
+|Key sequence|Desc|
+|-|-|
+|Ctrl-a|move cursor to begining of line|
+|Ctrl-e|move cursor to end of line|
+|Ctrl-f|move cursor forward 1 char|
+|Ctrl-b|move cursor backward 1 char|
+|Ctr-l|clear screen but keep the current command|
+|Alt-right arrow|move cursor forward 1 word|
+|Alt-left arrow|move cursor backward 1 word|
+
+Modifying text:
+
+|Key sequence|Desc|
+|-|-|
+|Ctrl-d|delete char at current cursor position|
+|Ctrl-t|swap current char with prev char|
+
+Cutting and Pasting text:
+
+|Key sequence|Desc|
+|-|-|
+|Ctrl-k|Cut text from cursor location to end of line|
+|Ctrl-u|Cut text from cursor location to begining of line|
+|Ctrl-y|Paste text from the clipboard to the cursor location|
+
+
