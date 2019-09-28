@@ -20,6 +20,73 @@
 
 `less` - g, G, /characters, n
 
+## Manipulating files and directories
+
+wildcards (blobbing)
+* match any characterS
+? match any single character
+[chars] match any character that is a member of the set chars
+[!chars] match any character that is not a member of the set chars
+[[:class:]] match any character that is a member of the specified class
+
+Most commonly used class:
+[:alnum:]
+[:alpha:]
+[:digit:]
+[:lower:]
+[:upper:]
+
+`cp`
+- cp file1 file2
+- cp item… dir
+- cp -r dir1 dir2: result is dir2/dir1
+- -a (—archive): copy files, directories and all of their attributes (ownerships, permissions..)
+
+  -i (—interactive): prompt user for overwriting files
+  
+  -r (—recursive): recursively copy dirs and their contents
+  
+  -u (—update): only copy files that either don’t exit or newer than existing file in the destination dir
+  
+  -v: verbose
+  
+`mv`
+- same usage as cp, except:
+  
+  mv dir1 dir2: change name of dir1 to dir2 if dir2 doesn’t exist, otherwise move dir1 inside dir2
+
+`mkdir dir...`
+
+`rm item…`
+- item = file or dir
+- rm -rf file1 dir1: either file1 or dir1 do not exist, rm continue silently
+- -i (—interactive): prompt user before deleting
+
+  -r (—recursive): delete dir and its sub dirs
+
+  -f (—force): ignore nonexistent files
+
+  -v (—verbose)
+
+tips: test rm with ls to see files are to be deleted
+
+`ln`
+- ln file link: create a hard link
+- ln -s item link: create a symbolic link
+- ln -s ../fun dir1/fun-sym: when create a symlink, we’re creating a text description of where the target file is relative to the symbolic link
+- Hard link:
+  - Cannot reference a file outside its own system (not on the same disk partition as the link)
+  - May not reference a dir
+- Symbolic link:
+  - Overcome limitations of hard links
+  - The pointed file and the corresponding symbolic link are largely indistinguishable: if write to link -> the file is written to. However when delete link, only the link is deleted
+  - If the file is deleted first, the link points to nothing (broken). ls usually display broken links in a distinguishing color (ie. red)
+- Files are made up of 2 parts:
+  - The data part contains file’s content
+  - The name part hold file’s name
+
+A file always has at least one link because the file’s name is created by a link. Create hard links => actually create additional name part. The system assigns a chain of disk blocks to inode associated with the name part. Each hard link therefore refers to a specific inode containing the file’s content => 2 hard link is the same if have same inode (ls -li)
+
 ## Permissions
 
 `id`
