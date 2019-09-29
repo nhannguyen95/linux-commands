@@ -262,3 +262,49 @@ background programs ~ daemon programs
   - VSZ: virtual memory size.
   - RSS: resident set size. Amount of physical memory the process is using in kb.
   - STARTED: Time when the process started.
+  
+`top`: view system processes in real time
+
+Putting a process in background: `command &`, return `[job_number]PID`.
+
+Putting a process in foreground: `fg %1`.
+
+|Key sequence|Desc|
+|-|-|
+|Ctrl-C|Terminate a process|
+|Ctrl-Z|Stop a process (and put it in background)|
+
+`kill`
+- `kill [-signal] PID`
+- kill doesn't exactly kill processes, rather it sends them signals (like Ctrl-C sends INT signal, Ctrl-Z sends TSTP singal)
+- Common signals by kill (`kill -l` for more detail):
+  
+  |Number|Name|Meaning|
+  |-|-|-|
+  |1|HUP|Hangup|
+  |2|INT|Interrupt|
+  |9|KILL|The process can't choose to handle/ignore this signal since the kernel immediately terminates the process, thus the process has no chance to clean up|
+  |15|TERM|Default signal|
+  |18|CONT||
+  |19|STOP||
+  |20|TSTP||
+- You must be the owner of a process to send it signals with kill, otherwise you must have super privileges.
+- Other common signals used by the system:
+  
+  |Number|Name|Meaning|
+  |3|QUIT|Quit|
+  |11|SEGV|Segmentation violation, sent if a program make illegal use of memory|
+  |28|WINCH|Window change|
+  
+
+`jobs`: list the jobs that have been launched from our terminal.
+
+`killall`: send signals to multiple processes.
+- `killall [-u user] [-signal] name`
+
+`sudo reboot`
+
+`shutdown`
+- sudo shutdown -h now: halt the system
+- sudo shutdown -r now: reboot
+
