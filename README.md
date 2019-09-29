@@ -308,3 +308,13 @@ Putting a process in foreground: `fg %1`.
 - sudo shutdown -h now: halt the system
 - sudo shutdown -r now: reboot
 
+## The Environment
+
+The shell stores 2 basic types of data in the environment:
+- shell variables: bits of data placed by bash.
+- environment variables: everything else.
+
+`printenv`: print environment variables
+- no argument or `printenv VAR_NAME`
+
+`set`: print both shell and environment variables
