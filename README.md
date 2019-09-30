@@ -318,3 +318,33 @@ The shell stores 2 basic types of data in the environment:
 - no argument or `printenv VAR_NAME`
 
 `set`: print both shell and environment variables
+
+When we log on to the system, the bash program reads a series of configuration scripts called startup files. This is then followed by more startup files in our home directory that define our personal environment. Those startup files depend on the type of shell session being started:
+- **A login shell session**: we are prompted for username and password (like whens start a virtual console session).
+
+  Startups files for login shell session
+  
+  |File|Content|
+  |-|-|
+  |/etc/profile|A global configuration script that applies to all users|
+  |~/.bash_profile|A user's personal startup file. This can be used to extend or override settings in the global configuration script|
+  |~/.bash_login|If ~/.bash_profile is not found, bash attempts to read this script|
+  |~/.profile|If neither ~/.bash_profile nor ~/.bash_login is found, bash attempts to read this file. This is the default in Debian-based distributions, such as Ubuntu|
+  
+- **A non-login shell session**: occurs when we launch a terminal session in the GUI.
+
+  Startups files for non-login shell session
+  
+  |File|Content|
+  |-|-|
+  |/etc/bash.bashrc|A global configuration script that applies to all users|
+  |~/.bashrc|A global configuration script that applies to all users. override settings in the global configuration script|
+  
+  Non-login shells also inherit the environment from their parent process, usually a login shell.
+  
+To add dirs to your PATH or define additional enviroment variables, place those changes in .bash_profile, place everything else in .bashrc
+  
+`export`:
+- `export VAR` tells the shell to make the content of VAR available to child processes of this shell.
+
+
