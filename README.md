@@ -347,4 +347,25 @@ To add dirs to your PATH or define additional enviroment variables, place those 
 `export`:
 - `export VAR` tells the shell to make the content of VAR available to child processes of this shell.
 
+## Package Management
+
+Early days of Linux: download source code then compile.
+
+Precompiled packages: faster and easier to deal with, = source code -> compile -> package metadata -> installation scripts.
+
+Most distributions fall into one of two camps of packaging technologies:
+- Debian .deb camp: Debian, Ubuntu, Linux Mint, Raspbian
+- Red Hat .rmp camp: Fedora, CentOS, Red Hat Enterprise Linux, OpenSUSE
+
+Package management systems usually consists of 2 types of tools:
+- low-level tools: handle tasks such as installing and removing package files.
+- high-level tools: perform metadata searching and dependency resolution.
+
+|Distributions|Low-level tools|High-level tools|
+|-|-|-|
+|Debian|dpkg|apt, apt-get, aptitude|
+|Fedora, Red Hat, Enterprise Linux, CentOS|rpm|yum, dnf|
+
+
+
 
